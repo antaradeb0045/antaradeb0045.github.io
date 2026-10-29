@@ -1,472 +1,412 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b16">
-<meta name="description" content="Antara Deb's professional portfolio in computer science, software development, machine learning, artificial intelligence and cybersecurity.">
-<title>Antara Deb | Computer Science & Technology Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#080d1c">
+<meta name="description" content="Antara Deb's Computer Science Engineering portfolio. Explore my skills, projects, internships and contact details.">
+<title>Antara Deb | Portfolio</title>
 
 <style>
-:root{
- --bg:#080b16;
- --panel:#11182b;
- --text:#f4f7ff;
- --muted:#a5b1ca;
- --cyan:#67e8f9;
- --purple:#a78bfa;
- --pink:#f0abfc;
- --border:rgba(148,163,184,.18);
+:root {
+  --bg: #080d1c;
+  --panel: #111c32;
+  --cyan: #55e6ff;
+  --purple: #a78bfa;
+  --text: #edf4ff;
+  --muted: #afbdd2;
+  --border: #2a3c59;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
- font-family:Inter,Arial,sans-serif;
- color:var(--text);background:var(--bg);
- line-height:1.8;overflow-x:hidden;
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(ellipse at top, #1a2b4b, var(--bg) 65%);
+  color: var(--text);
+  line-height: 1.7;
 }
-body:before{
- content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
- background:
- radial-gradient(ellipse at 5% 5%,#164e6350,transparent 34%),
- radial-gradient(ellipse at 95% 20%,#5b21b640,transparent 35%),
- radial-gradient(ellipse at 45% 90%,#0e749020,transparent 40%);
+a { color: var(--cyan); text-decoration: none; overflow-wrap: anywhere; }
+a:hover { color: var(--purple); }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 14px 10px;
+  background: rgba(8,13,28,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
 }
-body:after{
- content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
- opacity:.12;
- background-image:radial-gradient(#94a3b8 .6px,transparent .6px);
- background-size:25px 25px;
+nav a { font-size: 13px; font-weight: bold; }
+.container { width: min(1050px, 91%); margin: auto; }
+.hero { text-align: center; padding: 65px 0 45px; }
+.profile {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--cyan);
+  box-shadow: 0 0 30px #55e6ff55;
 }
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.container{width:min(1120px,91%);margin:auto}
-.gradient{
- background:linear-gradient(110deg,var(--cyan),var(--purple),var(--pink));
- -webkit-background-clip:text;background-clip:text;color:transparent;
+h1 {
+  font-size: clamp(35px, 7vw, 60px);
+  line-height: 1.2;
+  margin: 20px 0 10px;
 }
-header{
- position:sticky;top:0;z-index:100;
- background:rgba(8,11,22,.86);
- backdrop-filter:blur(18px);
- border-bottom:1px solid var(--border);
+h1 span, h2 { color: var(--cyan); }
+.subtitle { color: var(--muted); font-size: 18px; }
+.muted { color: var(--muted); }
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
 }
-nav{
- min-height:76px;display:flex;align-items:center;
- justify-content:space-between;gap:18px;flex-wrap:wrap;
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 9px;
+  background: linear-gradient(110deg, var(--cyan), var(--purple));
+  color: #08101f;
+  font-weight: bold;
+  box-shadow: 0 5px 22px #55e6ff20;
+  transition: .25s;
 }
-.logo{font:700 25px "Space Grotesk",sans-serif;letter-spacing:-1px}
-.logo span{color:var(--cyan)}
-.navlinks{display:flex;gap:20px;flex-wrap:wrap}
-.navlinks a{font-size:12px;color:var(--muted);transition:.25s}
-.navlinks a:hover{color:var(--cyan)}
-.hero{
- min-height:650px;display:grid;
- grid-template-columns:1.35fr .65fr;
- align-items:center;gap:55px;padding:80px 0;
+.btn:hover { color: #08101f; transform: translateY(-3px); }
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
 }
-.pill{
- display:inline-flex;align-items:center;gap:9px;
- padding:7px 14px;border-radius:40px;
- background:#67e8f910;border:1px solid #67e8f944;
- color:var(--cyan);font-size:11px;font-weight:700;
- letter-spacing:1px;margin-bottom:25px;
+section { padding: 28px 0; scroll-margin-top: 70px; }
+h2 { font-size: 28px; margin-bottom: 18px; }
+h3 { margin-top: 0; }
+.panel {
+  background: linear-gradient(135deg, #111d34, #0c1427);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 35px #0003;
 }
-.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;box-shadow:0 0 12px #4ade80}
-h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif}
-.hero h1{font-size:clamp(43px,7vw,77px);line-height:1.12;letter-spacing:-3px}
-.hero h2{font-size:clamp(19px,3vw,25px);font-weight:500;margin:20px 0}
-.hero p{font-size:15px;max-width:650px;color:var(--muted)}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;gap:8px;
- padding:12px 18px;border-radius:10px;font-size:13px;
- font-weight:700;transition:transform .25s,box-shadow .25s,border-color .25s;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
 }
-.btn:hover{transform:translateY(-4px)}
-.btn-main{
- color:#07111e;background:linear-gradient(110deg,var(--cyan),#c4b5fd);
- box-shadow:0 8px 28px #67e8f920;
+.card { transition: transform .25s, border-color .25s; }
+.card:hover { transform: translateY(-5px); border-color: var(--cyan); }
+.tags { display: flex; flex-wrap: wrap; gap: 9px; }
+.tag {
+  padding: 6px 12px;
+  background: #182b46;
+  border: 1px solid #304768;
+  border-radius: 20px;
+  font-size: 13px;
 }
-.btn-main:hover{box-shadow:0 12px 35px #67e8f945}
-.btn-outline{border:1px solid var(--border);background:#ffffff06}
-.btn-outline:hover{border-color:var(--cyan)}
-.photo-wrap{position:relative;width:min(290px,100%);margin:auto}
-.photo-glow{
- position:absolute;inset:-16px;border-radius:50%;
- background:conic-gradient(from 0deg,var(--cyan),#8b5cf6,#ec4899,var(--cyan));
- filter:blur(23px);opacity:.4;animation:spin 12s linear infinite;
+.contact-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
 }
-.photo-frame{
- position:relative;aspect-ratio:1;border-radius:50%;padding:5px;
- background:linear-gradient(135deg,var(--cyan),#8b5cf6,var(--pink));
- box-shadow:0 0 55px #8b5cf630;
+.contact-item:last-child { border-bottom: 0; }
+.contact-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--muted);
 }
-.photo-frame img{
- width:100%;height:100%;object-fit:cover;border-radius:50%;
- border:5px solid var(--bg);background:#17213a;
+.contact-value { font-size: 16px; font-weight: bold; }
+.thanks {
+  text-align: center;
+  padding: 45px 22px;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #111d34, #19132e);
+  border: 1px solid #304768;
+  border-radius: 18px;
 }
-.photo-caption{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
-.floating{
- position:absolute;background:#111a2d;border:1px solid var(--border);
- padding:9px 13px;border-radius:10px;font-size:11px;
- box-shadow:0 12px 35px #0006;animation:float 4s ease-in-out infinite;
+.thanks h2 { font-size: 30px; }
+.thanks p { max-width: 650px; margin: 14px auto; }
+footer {
+  text-align: center;
+  padding: 28px 12px;
+  color: var(--muted);
+  font-size: 13px;
 }
-.float-one{top:12%;left:-38px;color:var(--cyan)}
-.float-two{bottom:12%;right:-38px;color:#c4b5fd;animation-delay:1s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-section{padding:75px 0}
-.section-top{margin-bottom:30px}
-.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}
-.section-title{font-size:clamp(29px,4vw,42px);line-height:1.3;margin:8px 0 14px;letter-spacing:-1px}
-.section-desc{max-width:760px;color:var(--muted);font-size:14px}
-.grid{display:grid;gap:18px}
-.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.card{
- position:relative;padding:25px;border-radius:17px;
- background:linear-gradient(145deg,#141d32e8,#0d1425e8);
- border:1px solid var(--border);box-shadow:0 12px 32px #0002;
- transition:transform .3s,border-color .3s,box-shadow .3s;
- overflow:hidden;min-width:0;
-}
-.card:before{
- content:"";position:absolute;top:0;left:0;width:100%;height:1px;
- background:linear-gradient(90deg,transparent,#67e8f966,transparent);
-}
-.card:hover{
- transform:translateY(-6px);border-color:#67e8f955;
- box-shadow:0 18px 42px #0005,0 0 22px #67e8f908;
-}
-.card h3{font-size:18px;margin-bottom:9px}
-.card p{font-size:13px;color:var(--muted)}
-.card-icon{
- display:grid;place-items:center;width:45px;height:45px;
- border-radius:13px;margin-bottom:17px;font-size:22px;
- background:linear-gradient(135deg,#67e8f91c,#a78bfa20);
- border:1px solid #67e8f925;
-}
-.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.tag{
- font-size:11px;padding:5px 10px;border-radius:7px;
- background:#818cf810;border:1px solid #818cf829;color:#dce7ff;
-}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.stat{border:1px solid var(--border);background:#ffffff04;border-radius:12px;padding:15px;text-align:center}
-.stat strong{display:block;font:700 20px "Space Grotesk",sans-serif;color:var(--cyan)}
-.stat span{font-size:10px;color:var(--muted)}
-.timeline{border-left:1px solid #67e8f94d;margin-left:8px;padding-left:25px}
-.timeline-item{position:relative;margin-bottom:20px}
-.timeline-item:before{
- content:"";position:absolute;left:-32px;top:25px;width:12px;height:12px;
- border-radius:50%;background:var(--cyan);box-shadow:0 0 15px #67e8f980;
-}
-.meta{font-size:11px;color:var(--cyan);font-weight:700;margin-bottom:8px;letter-spacing:.5px}
-.project-card{display:flex;flex-direction:column;align-items:flex-start}
-.project-card .tag-list{margin-bottom:18px}
-.project-card .btn{margin-top:auto}
-.project-status{font-size:10px;color:#c4b5fd;margin-top:12px}
-.contact-panel{
- text-align:center;padding:clamp(25px,5vw,55px);
- border:1px solid #67e8f933;border-radius:22px;
- background:radial-gradient(ellipse at 50% 0%,#164e6330,transparent 65%),#111729b8;
- box-shadow:0 20px 60px #0003;
-}
-.contact-panel .section-desc{margin:0 auto}
-.contact-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
-.contact-detail{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
-.contact-detail a{
- font-size:12px;color:var(--muted);padding:9px 12px;
- border:1px solid var(--border);border-radius:8px;overflow-wrap:anywhere;
-}
-.contact-detail a:hover{color:var(--cyan);border-color:var(--cyan)}
-footer{border-top:1px solid var(--border);padding:25px 0;color:var(--muted);font-size:11px}
-.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-footer a{color:var(--cyan)}
-@media(max-width:800px){
- .hero{grid-template-columns:1fr;text-align:center;gap:45px;padding:55px 0}
- .hero p{margin:auto}.actions{justify-content:center}
- .photo-wrap{width:220px}.float-one{left:-28px}.float-two{right:-25px}
- .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
- .navlinks{gap:13px}
-}
-@media(max-width:560px){
- .container{width:91%}
- nav{padding:15px 0}
- .navlinks{gap:10px}
- .navlinks a{font-size:11px}
- .hero h1{letter-spacing:-2px}
- section{padding:53px 0}
- .grid-2,.grid-3{grid-template-columns:1fr}
- .stat-row{gap:7px}
- .stat{padding:10px 5px}
- .stat strong{font-size:17px}
- .stat span{font-size:9px}
- .card{padding:20px}
- .contact-detail{flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+hr { border: 0; border-top: 1px solid var(--border); }
+@media (max-width: 480px) {
+  nav { gap: 12px; }
+  nav a { font-size: 12px; }
+  .hero { padding-top: 45px; }
+  .panel { padding: 18px; }
 }
 </style>
 </head>
 
 <body>
-<header>
-<nav class="container">
-<a class="logo" href="#home">ANTARA<span>.</span></a>
-<div class="navlinks">
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
 </nav>
+
+<header class="hero container">
+  <img
+    class="profile"
+    src="./antara.jpg"
+    alt="Antara Deb"
+    onerror="this.onerror=null;this.src='./Screenshot_2026-10-30-01-38-32-42_92460851df6f172a4592fca41cc2d2e6.jpg';this.onerror=function(){this.style.display='none'}"
+  >
+
+  <h1>Hi, I'm <span>Antara Deb</span></h1>
+  <p class="subtitle">Computer Science Engineering Student</p>
+  <p class="muted">Aspiring Software Developer | Exploring Cybersecurity & Machine Learning</p>
+  <p class="muted">Learning, building, and growing one step at a time.</p>
+
+  <div class="buttons">
+    <a class="btn" href="#projects">Explore My Projects</a>
+    <a class="btn secondary"
+       href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
+       Get in Touch
+    </a>
+  </div>
 </header>
 
 <main class="container">
 
-<section class="hero" id="home">
-<div>
-<div class="pill"><span class="dot"></span> OPEN TO OPPORTUNITIES</div>
-<h1>Hello, I'm<br><span class="gradient">Antara Deb.</span></h1>
-<h2>Computer Science Engineering Student</h2>
-<p>
-I am a Computer Science and Engineering student with a growing interest
-in software development, artificial intelligence, machine learning,
-data science and cybersecurity. I enjoy exploring new technologies,
-strengthening my technical fundamentals and applying what I learn
-through practical projects and collaborative work.
-</p>
-<div class="actions">
-<a class="btn btn-main" href="#projects">Explore My Projects ↗</a>
-<a class="btn btn-outline" href="#contact">Get In Touch</a>
-<a class="btn btn-outline" href="https://www.linkedin.com/in/antara-cse-programming?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn ↗</a>
-</div>
-<div class="stat-row">
-<div class="stat"><strong>AI & ML</strong><span>Learning Focus</span></div>
-<div class="stat"><strong>Security</strong><span>Project Exposure</span></div>
-<div class="stat"><strong>Growth</strong><span>Always Learning</span></div>
-</div>
-</div>
-<div>
-<div class="photo-wrap">
-<div class="photo-glow"></div>
-<div class="photo-frame">
-<img src="./Screenshot_2026-10-30-01-38-32-42_92460851df6f172a4592fca41cc2d2e6.jpg" alt="Antara Deb">
-</div>
-<div class="floating float-one">✦ CSE Student</div>
-<div class="floating float-two">⌘ Always Learning</div>
-</div>
-<p class="photo-caption">Curiosity. Consistency. Continuous growth.</p>
-</div>
-</section>
-
 <section id="about">
-<div class="section-top">
-<div class="eyebrow">01 / About Me</div>
-<h2 class="section-title">Driven by curiosity.<br><span class="gradient">Focused on growth.</span></h2>
-<p class="section-desc">
-I am pursuing a Bachelor of Technology in Computer Science and Engineering
-at Barak Valley Engineering College in Assam. My learning journey covers
-programming, core computer science concepts, machine learning and
-cybersecurity. I am building my abilities step by step through academic
-work, technical projects and internship experiences.
-<br><br>
-I value continuous learning, problem-solving, teamwork and the willingness
-to explore unfamiliar technologies. My goal is to turn theoretical
-knowledge into useful practical skills and contribute to meaningful
-technology projects while continuing to grow professionally.
-</p>
-</div>
-<div class="grid grid-3">
-<div class="card">
-<div class="card-icon">🎯</div>
-<h3>Career Objective</h3>
-<p>To begin a career in technology where I can apply my knowledge, learn from experienced professionals and contribute to real-world projects.</p>
-</div>
-<div class="card">
-<div class="card-icon">💡</div>
-<h3>Areas of Interest</h3>
-<p>Software engineering, artificial intelligence, machine learning, data analysis, information security and technology innovation.</p>
-</div>
-<div class="card">
-<div class="card-icon">🌱</div>
-<h3>Learning Mindset</h3>
-<p>Developing strong fundamentals through practice, hands-on experimentation, academic projects and continuous improvement.</p>
-</div>
-</div>
+  <h2>About Me</h2>
+  <div class="panel">
+    I am a Computer Science and Engineering student at Barak Valley Engineering College, Assam.
+    I am developing my skills in programming, cybersecurity, machine learning, and software development.
+    I believe in learning through practice, building projects, and improving my fundamentals every day.
+    <p class="muted">
+      My goal is to gain practical experience, contribute to meaningful projects, and grow into a skilled technology professional.
+    </p>
+  </div>
 </section>
 
 <section id="education">
-<div class="section-top">
-<div class="eyebrow">02 / Education</div>
-<h2 class="section-title">My academic <span class="gradient">foundation.</span></h2>
-<p class="section-desc">Building a foundation in computing, programming, software systems and emerging technologies.</p>
-</div>
-<div class="card">
-<div class="card-icon">🎓</div>
-<div class="meta">BACHELOR'S DEGREE</div>
-<h3>Bachelor of Technology in Computer Science and Engineering</h3>
-<p><strong style="color:#f4f7ff">Barak Valley Engineering College (BVEC)</strong></p>
-<p>Nirala, Karimganj, Assam, India.</p>
-<p style="margin-top:12px">
-Coursework and learning interests include programming, data structures,
-database management, operating systems, computer networks, object-oriented
-programming, cloud computing, machine learning and distributed systems.
-</p>
-<div class="tag-list">
-<span class="tag">Computer Science</span>
-<span class="tag">Programming</span>
-<span class="tag">Database Systems</span>
-<span class="tag">Machine Learning</span>
-<span class="tag">Cybersecurity</span>
-</div>
-</div>
+  <h2>Education</h2>
+  <div class="panel">
+    <h3>B.Tech in Computer Science and Engineering</h3>
+    <p>Barak Valley Engineering College (BVEC)</p>
+    <p>Karimganj, Assam</p>
+    <p class="muted">2023 – 2027 · Currently pursuing</p>
+  </div>
 </section>
 
 <section id="skills">
-<div class="section-top">
-<div class="eyebrow">03 / Technical Skills</div>
-<h2 class="section-title">My growing <span class="gradient">toolkit.</span></h2>
-<p class="section-desc">
-A snapshot of the programming languages, technologies and concepts I have
-studied or explored. I am continuing to improve these skills through practice.
-</p>
-</div>
-<div class="grid grid-3">
-<div class="card">
-<div class="card-icon">⌨️</div>
-<h3>Programming Languages</h3>
-<p>Programming fundamentals and writing code to solve problems.</p>
-<div class="tag-list"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span></div>
-</div>
-<div class="card">
-<div class="card-icon">🧠</div>
-<h3>Core Computer Science</h3>
-<p>Fundamental concepts used to understand software and computing systems.</p>
-<div class="tag-list"><span class="tag">DBMS</span><span class="tag">Operating Systems</span><span class="tag">Computer Networks</span><span class="tag">OOP</span><span class="tag">DSA — Learning</span></div>
-</div>
-<div class="card">
-<div class="card-icon">🌐</div>
-<h3>Web & Databases</h3>
-<p>Basic web technologies and relational database concepts.</p>
-<div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">MySQL</span></div>
-</div>
-<div class="card">
-<div class="card-icon">🛡️</div>
-<h3>Cybersecurity</h3>
-<p>Exposure to security operations, log monitoring and security fundamentals.</p>
-<div class="tag-list"><span class="tag">SIEM</span><span class="tag">SOC Fundamentals</span><span class="tag">OWASP Fundamentals</span><span class="tag">Security Logs</span></div>
-</div>
-<div class="card">
-<div class="card-icon">⚙️</div>
-<h3>Tools & Environments</h3>
-<p>Tools used for development, version control and containerized environments.</p>
-<div class="tag-list"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span><span class="tag">Ubuntu</span><span class="tag">VS Code</span></div>
-</div>
-<div class="card">
-<div class="card-icon">📈</div>
-<h3>AI, ML & Data</h3>
-<p>Learning data preparation, predictive modelling and explainable AI concepts.</p>
-<div class="tag-list"><span class="tag">Machine Learning</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">LIME</span></div>
-</div>
-</div>
-</section>
-
-<section id="experience">
-<div class="section-top">
-<div class="eyebrow">04 / Experience</div>
-<h2 class="section-title">Learning through <span class="gradient">experience.</span></h2>
-<p class="section-desc">
-My project contribution and internship exposure have helped me explore
-the practical side of technology beyond academic coursework.
-</p>
-</div>
-<div class="timeline">
-<div class="timeline-item card">
-<div class="meta">CYBERSECURITY PROJECT CONTRIBUTION</div>
-<h3>GotXA — SIEM & SOAR</h3>
-<p>
-Contributed as a SIEM contributor to the GotXA project, focused on
-end-to-end autonomous security operations. This experience provided
-exposure to SIEM concepts, security log ingestion, monitoring workflows,
-Docker and Ubuntu-based development environments.
-</p>
-<div class="tag-list"><span class="tag">Cybersecurity</span><span class="tag">SIEM</span><span class="tag">SOAR</span><span class="tag">Docker</span><span class="tag">Ubuntu</span></div>
-<a class="btn btn-outline" href="https://github.com/antaradeb0045" target="_blank" rel="noopener" style="margin-top:17px">GitHub Profile ↗</a>
-</div>
-<div class="timeline-item card">
-<div class="meta">ACADEMIC INTERNSHIP</div>
-<h3>NIT Silchar</h3>
-<p>
-Academic internship exposure to machine learning, data mining and
-Market Basket Analysis, helping me explore data-driven approaches
-to identifying patterns and extracting useful insights.
-</p>
-<div class="tag-list"><span class="tag">Machine Learning</span><span class="tag">Data Mining</span><span class="tag">Market Basket Analysis</span></div>
-</div>
-<div class="timeline-item card">
-<div class="meta">INDUSTRIAL INTERNSHIP</div>
-<h3>NRL — Golaghat</h3>
-<p>
-Industrial internship exposure related to cybersecurity and technology,
-providing an opportunity to learn about the professional environment
-and practical applications of technical knowledge.
-</p>
-<div class="tag-list"><span class="tag">Cybersecurity</span><span class="tag">Industry Exposure</span><span class="tag">Professional Learning</span></div>
-</div>
-</div>
+  <h2>Skills & Technologies</h2>
+  <div class="grid">
+    <div class="panel">
+      <h3>Programming</h3>
+      <div class="tags">
+        <span class="tag">C</span>
+        <span class="tag">C++</span>
+        <span class="tag">Python</span>
+        <span class="tag">Data Structures & Algorithms</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Web & Database</h3>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Cybersecurity & Tools</h3>
+      <div class="tags">
+        <span class="tag">SIEM</span>
+        <span class="tag">SOAR Fundamentals</span>
+        <span class="tag">SOC Fundamentals</span>
+        <span class="tag">OWASP Fundamentals</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Linux / Ubuntu</span>
+        <span class="tag">Git & GitHub</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Machine Learning</h3>
+      <div class="tags">
+        <span class="tag">NumPy</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">Explainable AI</span>
+        <span class="tag">SHAP & LIME</span>
+      </div>
+    </div>
+  </div>
+  <p class="muted">I am continuously strengthening these skills through coursework and practical learning.</p>
 </section>
 
 <section id="projects">
-<div class="section-top">
-<div class="eyebrow">05 / Projects</div>
-<h2 class="section-title">Turning knowledge into <span class="gradient">practice.</span></h2>
-<p class="section-desc">
-Selected technical and academic work reflecting my interests in
-cybersecurity, machine learning and data analysis.
-</p>
-</div>
-<div class="grid grid-2">
-<div class="card project-card">
-<div class="card-icon">🛡️</div>
-<div class="meta">CYBERSECURITY • SIEM • SOAR</div>
-<h3>GotXA — End-to-End Autonomous SecOps</h3>
-<p>
-A security operations project involving SIEM and SOAR concepts,
-security log ingestion and monitoring workflows. My contribution
-provided practical exposure to security tooling and development
-environments using Docker and Ubuntu.
-</p>
-<div class="tag-list"><span class="tag">SIEM</span><span class="tag">SOAR</span><span class="tag">Docker</span><span class="tag">Ubuntu</span></div>
-<a class="btn btn-outline" href="https://github.com/antaradeb0045" target="_blank" rel="noopener">Explore GitHub ↗</a>
-</div>
-<div class="card project-card">
-<div class="card-icon">❤️</div>
-<div class="meta">MACHINE LEARNING • EXPLAINABLE AI</div>
-<h3>Cardiovascular Disease Risk Prediction & Interpretability</h3>
-<p>
-An academic project exploring machine learning methods for cardiovascular
-disease risk prediction and interpreting model outputs using Explainable
-AI techniques such as SHAP and LIME. The aim is to better understand
-which input features influence model predictions.
-</p>
-<div class="tag-list"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">SHAP</span><span class="tag">LIME</span><span class="tag">Explainable AI</span></div>
-<div class="project-status">● Academic project in progress</div>
-</div>
-<div class="card project-card">
-<div class="card-icon">📊</div>
-<div class="meta">DATA MINING • ANALYTICS</div>
-<h3>Market Basket Analysis</h3>
-<p>
-A data mining project exploring relationships between items in
-transaction datasets. The objective is to identify frequent item
-combinations and understand assoc
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <article class="panel card">
+      <h3>GotXA — End-to-End Autonomous SecOps, SIEM & SOAR</h3>
+      <p class="muted">
+        Contributed to a cybersecurity project involving SIEM-related work, security log ingestion, and security operations tooling.
+      </p>
+      <p><strong>Focus:</strong> Cybersecurity, SIEM, SOAR, Docker, Ubuntu.</p>
+      <a href="https://github.com/antaradeb0045"
+         target="_blank" rel="noopener">Explore GitHub →</a>
+    </article>
+
+    <article class="panel card">
+      <h3>Cardiovascular Disease Risk Prediction</h3>
+      <p class="muted">
+        Academic machine learning project focused on cardiovascular risk prediction and interpreting model predictions.
+      </p>
+      <p><strong>Focus:</strong> Machine Learning, Python, Scikit-learn, SHAP, LIME.</p>
+      <p class="muted">Project in progress.</p>
+    </article>
+
+    <article class="panel card">
+      <h3>Market Basket Analysis</h3>
+      <p class="muted">
+        Academic data mining work exploring relationships between products and patterns in transactional data.
+      </p>
+      <p><strong>Focus:</strong> Data Mining, Python, Association Rules.</p>
+    </article>
+
+    <article class="panel card">
+      <h3>Personal Portfolio Website</h3>
+      <p class="muted">
+        A responsive portfolio website presenting my education, skills, projects, and professional contact information.
+      </p>
+      <p><strong>Focus:</strong> HTML, CSS, GitHub Pages.</p>
+      <a href="https://github.com/antaradeb0045/antaradeb0045.github.io"
+         target="_blank" rel="noopener">View Website Source →</a>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internships & Experience</h2>
+  <div class="grid">
+
+    <div class="panel card">
+      <h3>GotXA — SIEM Contributor</h3>
+      <p class="muted">Cybersecurity Project Contribution</p>
+      <p>
+        Worked on a collaborative cybersecurity project related to security operations, SIEM, and SOAR.
+      </p>
+      <a href="https://github.com/antaradeb0045"
+         target="_blank" rel="noopener">GitHub Profile →</a>
+    </div>
+
+    <div class="panel card">
+      <h3>NIT Silchar</h3>
+      <p class="muted">Academic Internship</p>
+      <p>
+        Academic exposure to machine learning, data mining, and Market Basket Analysis.
+      </p>
+    </div>
+
+    <div class="panel card">
+      <h3>Numaligarh Refinery Limited (NRL)</h3>
+      <p class="muted">Industrial Internship</p>
+      <p>
+        Industrial exposure to cybersecurity and related technical concepts.
+      </p>
+    </div>
+
+  </div>
+  <p class="muted">
+    Internship descriptions are kept concise. Add your official internship titles, dates, and certificate links whenever available.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <div class="panel">
+    <p class="muted">
+      Interested in connecting, discussing technology, or exploring an opportunity?
+      Feel free to reach out through any of the links below.
+    </p>
+
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <a class="contact-value" href="mailto:antaradeb984@gmail.com">
+        antaradeb984@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <span class="contact-label">Phone</span>
+      <a class="contact-value" href="tel:+918486922426">
+        +91 84869 24226
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <span class="contact-label">LinkedIn</span>
+      <a class="contact-value"
+         href="https://www.linkedin.com/in/antara-cse-programming/"
+         target="_blank" rel="noopener">
+        linkedin.com/in/antara-cse-programming
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <span class="contact-label">GitHub</span>
+      <a class="contact-value"
+         href="https://github.com/antaradeb0045"
+         target="_blank" rel="noopener">
+        github.com/antaradeb0045
+      </a>
+    </div>
+
+    <div class="buttons">
+      <a class="btn"
+         href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
+        Email Me
+      </a>
+      <a class="btn secondary"
+         href="https://www.linkedin.com/in/antara-cse-programming/"
+         target="_blank" rel="noopener">
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="thanks">
+  <h2>Thank You for Visiting!</h2>
+  <p class="muted">
+    Thank you for taking the time to explore my portfolio.
+    Every project is a step forward in my learning journey,
+    and every opportunity is a chance to learn, contribute,
+    and create something meaningful.
+  </p>
+  <p style="color:#a78bfa;font-size:18px;font-weight:bold;">
+    Learning Today. Building Tomorrow.
+  </p>
+  <a class="btn"
+     href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
+    Let's Connect
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p>Designed with curiosity and a passion for learning.</p>
+  <p>© 2026 Antara Deb · All rights reserved.</p>
+  <a href="#top">Back to Top ↑</a>
+</footer>
+
+</body>
+</html>
+
