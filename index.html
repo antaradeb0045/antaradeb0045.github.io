@@ -1,153 +1,259 @@
+
 <!DOCTYPE html>
 <html lang="en" id="top">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d1c">
-<meta name="description" content="Antara Deb's Computer Science Engineering portfolio. Explore my skills, projects, internships and contact details.">
-<title>Antara Deb | Portfolio</title>
+<meta name="description" content="Antara Deb's portfolio showcasing Computer Science, cybersecurity, machine learning and projects.">
+<title>Antara Deb | My Portfolio</title>
 
 <style>
 :root {
-  --bg: #080d1c;
-  --panel: #111c32;
-  --cyan: #55e6ff;
-  --purple: #a78bfa;
-  --text: #edf4ff;
-  --muted: #afbdd2;
-  --border: #2a3c59;
+  --bg:#080d1c;
+  --panel:#101b32;
+  --cyan:#55e6ff;
+  --purple:#a78bfa;
+  --pink:#ff9de2;
+  --text:#edf4ff;
+  --muted:#aabbd2;
+  --border:#293e60;
 }
-* { box-sizing: border-box; scroll-behavior: smooth; }
+* { box-sizing:border-box; scroll-behavior:smooth; }
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(ellipse at top, #1a2b4b, var(--bg) 65%);
-  color: var(--text);
-  line-height: 1.7;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 5%,#192b50 0,transparent 35%),
+    radial-gradient(ellipse at 90% 35%,#201541 0,transparent 30%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
 }
-a { color: var(--cyan); text-decoration: none; overflow-wrap: anywhere; }
-a:hover { color: var(--purple); }
+a { color:var(--cyan); text-decoration:none; overflow-wrap:anywhere; }
+a:hover { color:var(--pink); }
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 14px 10px;
-  background: rgba(8,13,28,.96);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  position:sticky; top:0; z-index:20;
+  display:flex; justify-content:center; flex-wrap:wrap; gap:17px;
+  padding:14px 10px;
+  background:#080d1cf2;
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
 }
-nav a { font-size: 13px; font-weight: bold; }
-.container { width: min(1050px, 91%); margin: auto; }
-.hero { text-align: center; padding: 65px 0 45px; }
-.profile {
-  width: 155px;
-  height: 155px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--cyan);
-  box-shadow: 0 0 30px #55e6ff55;
-}
+nav a { font-size:13px; font-weight:bold; }
+.container { width:min(1050px,91%); margin:auto; }
+.hero { text-align:center; padding:55px 0 40px; }
 h1 {
-  font-size: clamp(35px, 7vw, 60px);
-  line-height: 1.2;
-  margin: 20px 0 10px;
+  font-size:clamp(36px,7vw,60px);
+  line-height:1.2; margin:25px 0 12px;
+  letter-spacing:-1.5px;
 }
-h1 span, h2 { color: var(--cyan); }
-.subtitle { color: var(--muted); font-size: 18px; }
-.muted { color: var(--muted); }
+h1 span {
+  background:linear-gradient(100deg,var(--cyan),var(--purple),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+h2 { color:var(--cyan); font-size:27px; margin-bottom:18px; }
+h3 { margin-top:0; }
+.subtitle { color:#dce7fa; font-size:18px; }
+.muted { color:var(--muted); }
 .buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
+  display:flex; justify-content:center; align-items:center;
+  flex-wrap:wrap; gap:13px; margin-top:25px;
 }
 .btn {
-  display: inline-block;
-  padding: 11px 20px;
-  border-radius: 9px;
-  background: linear-gradient(110deg, var(--cyan), var(--purple));
-  color: #08101f;
-  font-weight: bold;
-  box-shadow: 0 5px 22px #55e6ff20;
-  transition: .25s;
+  display:inline-block; padding:11px 21px;
+  border:1px solid transparent; border-radius:30px;
+  background:linear-gradient(110deg,var(--cyan),var(--purple));
+  color:#08101f; font-weight:bold;
+  box-shadow:0 0 20px #55e6ff30;
+  transition:transform .25s,box-shadow .25s;
 }
-.btn:hover { color: #08101f; transform: translateY(-3px); }
+.btn:hover {
+  color:#08101f; transform:translateY(-3px);
+  box-shadow:0 0 28px #55e6ff70;
+}
 .btn.secondary {
-  background: transparent;
-  border: 1px solid var(--cyan);
-  color: var(--cyan);
+  background:transparent; border-color:var(--cyan); color:var(--cyan);
 }
-section { padding: 28px 0; scroll-margin-top: 70px; }
-h2 { font-size: 28px; margin-bottom: 18px; }
-h3 { margin-top: 0; }
+section { padding:27px 0; scroll-margin-top:70px; }
+
+/* SPECIAL PHOTO EFFECTS */
+.profile-wrap {
+  position:relative;
+  width:175px; height:175px;
+  margin:0 auto 25px;
+  display:flex; align-items:center; justify-content:center;
+  isolation:isolate;
+  animation:floatProfile 4s ease-in-out infinite;
+}
+.profile-wrap::before {
+  content:"";
+  position:absolute; inset:-9px;
+  border-radius:50%;
+  background:conic-gradient(
+    from 0deg,var(--cyan),var(--purple),var(--pink),var(--cyan)
+  );
+  animation:rotateGlow 5s linear infinite;
+  z-index:-2;
+}
+.profile-wrap::after {
+  content:"";
+  position:absolute; inset:-19px;
+  border:1px dashed #55e6ff9c;
+  border-radius:50%;
+  animation:rotateGlow 14s linear infinite reverse;
+  z-index:-3;
+}
+.profile {
+  width:100%; height:100%;
+  object-fit:cover; border-radius:50%;
+  border:5px solid var(--bg);
+  box-shadow:0 0 20px #55e6ff85,0 0 42px #a78bfa45;
+  transition:transform .4s,box-shadow .4s;
+}
+.profile-wrap:hover .profile {
+  transform:scale(1.05);
+  box-shadow:0 0 28px var(--cyan),0 0 55px #a78bfa99;
+}
+.float-deco {
+  position:absolute; z-index:3;
+  display:flex; align-items:center; justify-content:center;
+  width:42px; height:42px;
+  border-radius:15px;
+  background:#101b32ed;
+  border:1px solid #55e6ffb0;
+  box-shadow:0 0 18px #55e6ff45;
+  font-size:23px;
+  animation:bob 3s ease-in-out infinite;
+}
+.deco-heart {
+  top:-9px; right:-17px;
+  color:var(--pink);
+  border-color:#ff9de2;
+  animation-delay:.5s;
+}
+.deco-code {
+  bottom:9px; left:-21px;
+  color:var(--cyan);
+  animation-delay:1s;
+}
+.deco-star {
+  top:43%; right:-31px;
+  color:var(--purple);
+  animation-delay:1.5s;
+}
+.deco-sparkle {
+  top:4px; left:-22px;
+  color:#fff1a8;
+  border-color:#fff1a8;
+  animation-delay:.8s;
+}
+.profile-caption {
+  display:inline-block;
+  margin-top:0;
+  padding:5px 16px;
+  border-radius:30px;
+  border:1px solid #a78bfa88;
+  background:#a78bfa12;
+  color:#dfd3ff;
+  font-size:12px;
+  letter-spacing:2px;
+  box-shadow:0 0 20px #a78bfa20;
+  animation:captionGlow 3s ease-in-out infinite;
+}
+@keyframes floatProfile {
+  0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-9px); }
+}
+@keyframes rotateGlow { to { transform:rotate(360deg); } }
+@keyframes bob {
+  0%,100% { transform:translateY(0) rotate(-5deg); }
+  50% { transform:translateY(-8px) rotate(5deg); }
+}
+@keyframes captionGlow {
+  0%,100% { box-shadow:0 0 10px #a78bfa18; }
+  50% { box-shadow:0 0 22px #a78bfa50; }
+}
+
+/* CONTENT CARDS */
 .panel {
-  background: linear-gradient(135deg, #111d34, #0c1427);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 10px 35px #0003;
+  background:linear-gradient(135deg,#111d34eF,#0c1427f5);
+  border:1px solid var(--border);
+  border-radius:17px; padding:22px;
+  box-shadow:0 10px 35px #0003;
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
 }
-.card { transition: transform .25s, border-color .25s; }
-.card:hover { transform: translateY(-5px); border-color: var(--cyan); }
-.tags { display: flex; flex-wrap: wrap; gap: 9px; }
+.card {
+  position:relative; overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.card::before {
+  content:"";
+  position:absolute; top:0; left:-100%;
+  width:65%; height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--purple));
+  transition:left .6s;
+}
+.card:hover::before { left:100%; }
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--cyan);
+  box-shadow:0 12px 35px #55e6ff14;
+}
+.tags { display:flex; flex-wrap:wrap; gap:8px; }
 .tag {
-  padding: 6px 12px;
-  background: #182b46;
-  border: 1px solid #304768;
-  border-radius: 20px;
-  font-size: 13px;
+  padding:5px 11px;
+  background:#182b46;
+  border:1px solid #304768;
+  border-radius:22px; font-size:13px;
+  transition:background .2s,border-color .2s;
 }
-.contact-item {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-}
-.contact-item:last-child { border-bottom: 0; }
+.tag:hover { background:#213b5c; border-color:var(--cyan); }
+.contact-item { padding:14px 0; border-bottom:1px solid var(--border); }
+.contact-item:last-child { border-bottom:0; }
 .contact-label {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: var(--muted);
+  display:block; color:var(--muted);
+  font-size:11px; text-transform:uppercase; letter-spacing:1.5px;
 }
-.contact-value { font-size: 16px; font-weight: bold; }
+.contact-value { font-weight:bold; }
 .thanks {
-  text-align: center;
-  padding: 45px 22px;
-  margin-top: 30px;
-  background: linear-gradient(135deg, #111d34, #19132e);
-  border: 1px solid #304768;
-  border-radius: 18px;
+  text-align:center; padding:45px 22px; margin-top:32px;
+  background:linear-gradient(135deg,#111d34,#19132e);
+  border:1px solid #304768; border-radius:20px;
+  box-shadow:0 0 35px #a78bfa0c;
 }
-.thanks h2 { font-size: 30px; }
-.thanks p { max-width: 650px; margin: 14px auto; }
-footer {
-  text-align: center;
-  padding: 28px 12px;
-  color: var(--muted);
-  font-size: 13px;
+.thanks h2 { font-size:30px; }
+.thanks p { max-width:620px; margin:14px auto; }
+.thanks .signature { color:var(--purple); font-weight:bold; font-size:17px; }
+footer { text-align:center; padding:28px 12px; color:var(--muted); font-size:13px; }
+
+@media(max-width:480px) {
+  nav { gap:12px; }
+  nav a { font-size:12px; }
+  .hero { padding-top:42px; }
+  .profile-wrap { width:150px; height:150px; }
+  .panel { padding:18px; }
 }
-hr { border: 0; border-top: 1px solid var(--border); }
-@media (max-width: 480px) {
-  nav { gap: 12px; }
-  nav a { font-size: 12px; }
-  .hero { padding-top: 45px; }
-  .panel { padding: 18px; }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+  }
 }
 </style>
 </head>
 
 <body>
 <nav>
+  <a href="#top">Home</a>
   <a href="#about">About</a>
   <a href="#education">Education</a>
   <a href="#skills">Skills</a>
@@ -157,23 +263,36 @@ hr { border: 0; border-top: 1px solid var(--border); }
 </nav>
 
 <header class="hero container">
-  <img
-    class="profile"
-    src="./antara.jpg"
-    alt="Antara Deb"
-    onerror="this.onerror=null;this.src='./Screenshot_2026-10-30-01-38-32-42_92460851df6f172a4592fca41cc2d2e6.jpg';this.onerror=function(){this.style.display='none'}"
-  >
+  <div class="profile-wrap">
+    <span class="float-deco deco-heart">♡</span>
+    <span class="float-deco deco-code">&lt;/&gt;</span>
+    <span class="float-deco deco-star">✦</span>
+    <span class="float-deco deco-sparkle">✧</span>
+
+    <img
+      class="profile"
+      src="./Screenshot_2026-10-30-01-38-32-42_92460851df6f172a4592fca41cc2d2e6.jpg"
+      alt="Antara Deb"
+      onerror="this.style.display='none'"
+    >
+  </div>
+
+  <div class="profile-caption">✧ DREAM · CODE · GROW ✧</div>
 
   <h1>Hi, I'm <span>Antara Deb</span></h1>
   <p class="subtitle">Computer Science Engineering Student</p>
-  <p class="muted">Aspiring Software Developer | Exploring Cybersecurity & Machine Learning</p>
-  <p class="muted">Learning, building, and growing one step at a time.</p>
+  <p class="muted">
+    Aspiring Software Developer | Exploring Cybersecurity &amp; Machine Learning
+  </p>
+  <p style="color:#55e6ff;font-style:italic;">
+    Learning Today. Building Tomorrow. ♡
+  </p>
 
   <div class="buttons">
-    <a class="btn" href="#projects">Explore My Projects</a>
+    <a class="btn" href="#projects">Explore My Projects ↗</a>
     <a class="btn secondary"
        href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
-       Get in Touch
+      ✉ Get in Touch
     </a>
   </div>
 </header>
@@ -181,41 +300,41 @@ hr { border: 0; border-top: 1px solid var(--border); }
 <main class="container">
 
 <section id="about">
-  <h2>About Me</h2>
+  <h2>About Me ✧</h2>
   <div class="panel">
-    I am a Computer Science and Engineering student at Barak Valley Engineering College, Assam.
+    I am a B.Tech Computer Science and Engineering student at Barak Valley Engineering College, Assam.
     I am developing my skills in programming, cybersecurity, machine learning, and software development.
-    I believe in learning through practice, building projects, and improving my fundamentals every day.
+    I enjoy learning through practical projects and continuously improving my technical fundamentals.
     <p class="muted">
-      My goal is to gain practical experience, contribute to meaningful projects, and grow into a skilled technology professional.
+      My goal is to gain practical experience, contribute to meaningful projects, and grow into a technology professional.
     </p>
   </div>
 </section>
 
 <section id="education">
-  <h2>Education</h2>
-  <div class="panel">
+  <h2>Education 🎓</h2>
+  <div class="panel card">
     <h3>B.Tech in Computer Science and Engineering</h3>
     <p>Barak Valley Engineering College (BVEC)</p>
     <p>Karimganj, Assam</p>
-    <p class="muted">2023 – 2027 · Currently pursuing</p>
+    <p class="muted">2023–2027 · Currently pursuing</p>
   </div>
 </section>
 
 <section id="skills">
-  <h2>Skills & Technologies</h2>
+  <h2>Skills &amp; Technologies ✨</h2>
   <div class="grid">
     <div class="panel">
-      <h3>Programming</h3>
+      <h3>⌨ Programming</h3>
       <div class="tags">
         <span class="tag">C</span>
         <span class="tag">C++</span>
         <span class="tag">Python</span>
-        <span class="tag">Data Structures & Algorithms</span>
+        <span class="tag">DSA</span>
       </div>
     </div>
     <div class="panel">
-      <h3>Web & Database</h3>
+      <h3>🌐 Web &amp; Database</h3>
       <div class="tags">
         <span class="tag">HTML</span>
         <span class="tag">CSS</span>
@@ -223,7 +342,7 @@ hr { border: 0; border-top: 1px solid var(--border); }
       </div>
     </div>
     <div class="panel">
-      <h3>Cybersecurity & Tools</h3>
+      <h3>🛡 Cybersecurity</h3>
       <div class="tags">
         <span class="tag">SIEM</span>
         <span class="tag">SOAR Fundamentals</span>
@@ -231,109 +350,93 @@ hr { border: 0; border-top: 1px solid var(--border); }
         <span class="tag">OWASP Fundamentals</span>
         <span class="tag">Docker</span>
         <span class="tag">Linux / Ubuntu</span>
-        <span class="tag">Git & GitHub</span>
+        <span class="tag">Git &amp; GitHub</span>
       </div>
     </div>
     <div class="panel">
-      <h3>Machine Learning</h3>
+      <h3>🧠 Machine Learning</h3>
       <div class="tags">
         <span class="tag">NumPy</span>
         <span class="tag">Pandas</span>
         <span class="tag">Scikit-learn</span>
-        <span class="tag">Explainable AI</span>
-        <span class="tag">SHAP & LIME</span>
+        <span class="tag">SHAP</span>
+        <span class="tag">LIME</span>
       </div>
     </div>
   </div>
-  <p class="muted">I am continuously strengthening these skills through coursework and practical learning.</p>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2>My Projects 🚀</h2>
   <div class="grid">
-
     <article class="panel card">
-      <h3>GotXA — End-to-End Autonomous SecOps, SIEM & SOAR</h3>
+      <h3>🛡 GotXA — SIEM &amp; SOAR</h3>
       <p class="muted">
-        Contributed to a cybersecurity project involving SIEM-related work, security log ingestion, and security operations tooling.
+        Cybersecurity project contribution involving SIEM-related work, log ingestion, and security operations tooling.
       </p>
       <p><strong>Focus:</strong> Cybersecurity, SIEM, SOAR, Docker, Ubuntu.</p>
-      <a href="https://github.com/antaradeb0045"
-         target="_blank" rel="noopener">Explore GitHub →</a>
+      <a href="https://github.com/antaradeb0045" target="_blank" rel="noopener">Explore GitHub →</a>
     </article>
 
     <article class="panel card">
-      <h3>Cardiovascular Disease Risk Prediction</h3>
+      <h3>❤️ Cardiovascular Risk Prediction</h3>
       <p class="muted">
-        Academic machine learning project focused on cardiovascular risk prediction and interpreting model predictions.
+        Academic machine learning project focused on cardiovascular disease risk prediction and model interpretability.
       </p>
-      <p><strong>Focus:</strong> Machine Learning, Python, Scikit-learn, SHAP, LIME.</p>
+      <p><strong>Focus:</strong> Python, Scikit-learn, SHAP, LIME.</p>
       <p class="muted">Project in progress.</p>
     </article>
 
     <article class="panel card">
-      <h3>Market Basket Analysis</h3>
+      <h3>📊 Market Basket Analysis</h3>
       <p class="muted">
-        Academic data mining work exploring relationships between products and patterns in transactional data.
+        Data mining work exploring product relationships and patterns in transactional data.
       </p>
-      <p><strong>Focus:</strong> Data Mining, Python, Association Rules.</p>
+      <p><strong>Focus:</strong> Python, Data Mining, Association Rules.</p>
     </article>
 
     <article class="panel card">
-      <h3>Personal Portfolio Website</h3>
+      <h3>💻 Personal Portfolio Website</h3>
       <p class="muted">
-        A responsive portfolio website presenting my education, skills, projects, and professional contact information.
+        A responsive personal website presenting my skills, education, projects, and contact information.
       </p>
       <p><strong>Focus:</strong> HTML, CSS, GitHub Pages.</p>
       <a href="https://github.com/antaradeb0045/antaradeb0045.github.io"
          target="_blank" rel="noopener">View Website Source →</a>
     </article>
-
   </div>
 </section>
 
 <section id="experience">
-  <h2>Internships & Experience</h2>
+  <h2>Internships &amp; Experience 💼</h2>
   <div class="grid">
-
     <div class="panel card">
       <h3>GotXA — SIEM Contributor</h3>
       <p class="muted">Cybersecurity Project Contribution</p>
-      <p>
-        Worked on a collaborative cybersecurity project related to security operations, SIEM, and SOAR.
-      </p>
-      <a href="https://github.com/antaradeb0045"
-         target="_blank" rel="noopener">GitHub Profile →</a>
+      <p>Experience with collaborative security operations work related to SIEM and SOAR.</p>
+      <a href="https://github.com/antaradeb0045" target="_blank" rel="noopener">GitHub Profile →</a>
     </div>
 
     <div class="panel card">
       <h3>NIT Silchar</h3>
       <p class="muted">Academic Internship</p>
-      <p>
-        Academic exposure to machine learning, data mining, and Market Basket Analysis.
-      </p>
+      <p>Academic exposure to machine learning, data mining, and Market Basket Analysis.</p>
     </div>
 
     <div class="panel card">
       <h3>Numaligarh Refinery Limited (NRL)</h3>
       <p class="muted">Industrial Internship</p>
-      <p>
-        Industrial exposure to cybersecurity and related technical concepts.
-      </p>
+      <p>Industrial exposure to cybersecurity and related technical concepts.</p>
     </div>
-
   </div>
-  <p class="muted">
-    Internship descriptions are kept concise. Add your official internship titles, dates, and certificate links whenever available.
-  </p>
 </section>
 
 <section id="contact">
-  <h2>Let's Connect</h2>
+  <h2>Let's Connect 💌</h2>
   <div class="panel">
     <p class="muted">
-      Interested in connecting, discussing technology, or exploring an opportunity?
-      Feel free to reach out through any of the links below.
+      Have an opportunity, a project idea, or simply want to connect?
+      I'd be happy to hear from you!
     </p>
 
     <div class="contact-item">
@@ -345,7 +448,7 @@ hr { border: 0; border-top: 1px solid var(--border); }
 
     <div class="contact-item">
       <span class="contact-label">Phone</span>
-      <a class="contact-value" href="tel:+918486922426">
+      <a class="contact-value" href="tel:+918486924226">
         +91 84869 24226
       </a>
     </div>
@@ -371,42 +474,39 @@ hr { border: 0; border-top: 1px solid var(--border); }
     <div class="buttons">
       <a class="btn"
          href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
-        Email Me
+        ✉ Email Me
       </a>
       <a class="btn secondary"
          href="https://www.linkedin.com/in/antara-cse-programming/"
          target="_blank" rel="noopener">
-        Connect on LinkedIn
+        Connect on LinkedIn ↗
       </a>
     </div>
   </div>
 </section>
 
 <section class="thanks">
-  <h2>Thank You for Visiting!</h2>
+  <h2>Thank You for Visiting! ♡</h2>
   <p class="muted">
     Thank you for taking the time to explore my portfolio.
     Every project is a step forward in my learning journey,
     and every opportunity is a chance to learn, contribute,
     and create something meaningful.
   </p>
-  <p style="color:#a78bfa;font-size:18px;font-weight:bold;">
-    Learning Today. Building Tomorrow.
-  </p>
+  <p class="signature">Learning Today. Building Tomorrow. ✨</p>
   <a class="btn"
      href="mailto:antaradeb984@gmail.com?subject=Hello%20Antara">
-    Let's Connect
+    Let's Connect ♡
   </a>
 </section>
 
 </main>
 
 <footer>
-  <p>Designed with curiosity and a passion for learning.</p>
+  <p>Designed with curiosity, creativity, and a passion for learning.</p>
   <p>© 2026 Antara Deb · All rights reserved.</p>
   <a href="#top">Back to Top ↑</a>
 </footer>
 
 </body>
 </html>
-
