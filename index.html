@@ -1,578 +1,836 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#170e20">
+<meta name="theme-color" content="#321b2b">
+<meta name="description" content="Antara Deb — Computer Science Engineering student, aspiring software developer, and technology enthusiast.">
 <title>Antara Deb | Portfolio</title>
-<meta name="description" content="Antara Deb - Computer Science Engineering student, aspiring software developer and technology enthusiast.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
 :root {
-  --bg:#170e20;
-  --panel:#24162e;
-  --pink:#f5a9ce;
-  --light:#ffe0ef;
-  --purple:#b99aff;
-  --text:#fff4fa;
-  --muted:#c5b4c8;
-  --line:rgba(255,255,255,.12);
+  --dark: #321b2b;
+  --dark2: #482638;
+  --pink: #f4c9d8;
+  --pink2: #fbe9ef;
+  --rose: #c76b91;
+  --text: #493440;
+  --muted: #806b77;
+  --white: #fffafc;
+  --line: rgba(90,45,68,.13);
+  --shadow: 0 18px 50px rgba(57,25,43,.09);
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background:var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
-  background:
-    radial-gradient(circle at 15% 15%,rgba(201,116,183,.19),transparent 30%),
-    radial-gradient(circle at 85% 35%,rgba(135,100,210,.16),transparent 30%),
-    radial-gradient(circle at 45% 90%,rgba(255,169,206,.10),transparent 35%);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
 }
 
 a {
-  color:inherit;
-  text-decoration:none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  font:inherit;
+  font: inherit;
 }
 
 .container {
-  width:min(1100px,90%);
-  margin:auto;
-}
-
-nav {
-  position:sticky;
-  top:12px;
-  z-index:100;
-  width:min(1100px,94%);
-  margin:12px auto 0;
-  padding:13px 22px;
-  border:1px solid var(--line);
-  border-radius:50px;
-  background:rgba(30,18,39,.88);
-  backdrop-filter:blur(16px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo {
-  font-family:'Playfair Display',serif;
-  font-size:23px;
-  color:var(--pink);
-  font-weight:bold;
-}
-
-.nav-links {
-  display:flex;
-  gap:23px;
-  align-items:center;
-}
-
-.nav-links a {
-  font-size:13px;
-  color:var(--muted);
-  transition:.3s;
-}
-
-.nav-links a:hover {
-  color:var(--pink);
-}
-
-.menu-btn {
-  display:none;
-  background:none;
-  color:var(--pink);
-  border:0;
-  font-size:26px;
-  cursor:pointer;
-}
-
-.hero {
-  min-height:85vh;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  align-items:center;
-  gap:55px;
-  padding-top:70px;
-  padding-bottom:60px;
-}
-
-.eyebrow {
-  color:var(--pink);
-  letter-spacing:4px;
-  text-transform:uppercase;
-  font-size:12px;
-  font-weight:bold;
-}
-
-.hero h1 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(48px,7vw,82px);
-  line-height:1.1;
-  margin:20px 0;
-}
-
-.hero h1 span {
-  color:var(--pink);
-}
-
-.hero h2 {
-  color:var(--purple);
-  font-size:19px;
-  font-weight:500;
-  margin-bottom:18px;
-}
-
-.hero p {
-  color:var(--muted);
-  max-width:520px;
-}
-
-.hero-buttons {
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.btn {
-  display:inline-block;
-  padding:12px 23px;
-  border-radius:30px;
-  background:var(--pink);
-  color:#251425;
-  font-weight:700;
-  font-size:14px;
-  transition:.3s;
-}
-
-.btn:hover {
-  transform:translateY(-3px);
-  box-shadow:0 8px 25px rgba(245,169,206,.25);
-}
-
-.btn-outline {
-  background:transparent;
-  color:var(--light);
-  border:1px solid var(--pink);
-}
-
-.photo-area {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.photo-frame {
-  width:min(330px,75vw);
-  aspect-ratio:4/5;
-  padding:9px;
-  border:1px solid rgba(245,169,206,.6);
-  border-radius:180px 180px 35px 35px;
-  background:linear-gradient(145deg,#f5a9ce,#9d79ce,#39234a);
-  box-shadow:0 20px 70px rgba(0,0,0,.35);
-}
-
-.photo-frame img {
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  border-radius:175px 175px 28px 28px;
-  animation:none!important;
-  transform:none!important;
+  width: min(1120px, 90%);
+  margin: auto;
 }
 
 section {
-  padding:85px 0;
+  padding: 100px 0;
+  scroll-margin-top: 80px;
 }
 
-.section-heading {
-  margin-bottom:40px;
+.section-label {
+  color: var(--rose);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.section-heading small {
-  color:var(--pink);
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:11px;
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
-.section-heading h2 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(32px,5vw,46px);
-  margin-top:8px;
+.section-intro {
+  max-width: 720px;
+  color: var(--muted);
+  margin-bottom: 42px;
 }
 
-.section-heading p {
-  color:var(--muted);
-  margin-top:10px;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,250,252,.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
 }
+
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--rose);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  transition: .25s;
+}
+
+.nav-links a:hover {
+  color: var(--rose);
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--dark);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.55), transparent 30%),
+    linear-gradient(130deg, #f8dce6, #f7eaf0 55%, #f2c8d8);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.hero-tag {
+  display: inline-block;
+  border: 1px solid rgba(120,55,83,.2);
+  padding: 8px 15px;
+  border-radius: 30px;
+  color: var(--dark2);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 7vw, 82px);
+  color: var(--dark);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.hero h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #775265;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 570px;
+  color: #6e5664;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 23px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--dark);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--rose);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 1px solid var(--dark);
+  color: var(--dark);
+}
+
+.btn-outline:hover {
+  background: white;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  max-width: 350px;
+  margin: auto;
+}
+
+.hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -17px 17px 17px -17px;
+  border: 1px solid rgba(104,48,75,.4);
+  border-radius: 190px 190px 30px 30px;
+}
+
+.hero-photo {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 190px 190px 30px 30px;
+  background: #e8b8ca;
+  box-shadow: var(--shadow);
+}
+
+.hero-note {
+  position: absolute;
+  bottom: 28px;
+  left: -45px;
+  background: var(--white);
+  padding: 15px 19px;
+  border-radius: 13px;
+  box-shadow: var(--shadow);
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+/* ABOUT */
 
 .about-grid {
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
 }
 
-.card {
-  background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:27px;
-  transition:.3s;
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 17px;
+  font-size: 14px;
 }
 
-.card:hover {
-  border-color:rgba(245,169,206,.55);
-  transform:translateY(-4px);
+.about-highlight {
+  background: var(--pink2);
+  border-radius: 22px;
+  padding: 30px;
+  border: 1px solid var(--line);
 }
 
-.card h3 {
-  color:var(--pink);
-  font-size:19px;
-  margin-bottom:12px;
+.about-highlight h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  color: var(--dark);
+  margin-bottom: 15px;
 }
 
-.card p {
-  color:var(--muted);
-  font-size:14px;
+.about-highlight p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
-.details {
-  display:grid;
-  gap:15px;
+.personal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
 }
 
-.detail-item {
-  border-bottom:1px solid var(--line);
-  padding-bottom:12px;
+.personal-tags span {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  padding: 7px 12px;
+  font-size: 11px;
+  color: var(--dark2);
 }
 
-.detail-item:last-child {
-  border:0;
+/* QUICK FACTS */
+
+.facts {
+  background: var(--dark);
+  color: white;
+  padding: 40px 0;
 }
 
-.detail-item strong {
-  display:block;
-  color:var(--pink);
-  font-size:12px;
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+  text-align: center;
 }
 
-.detail-item span {
-  color:var(--muted);
-  font-size:14px;
+.fact strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--pink);
+}
+
+.fact span {
+  font-size: 11px;
+  color: #e9cbd7;
+}
+
+/* SKILLS */
+
+.skills-section {
+  background: #fff4f7;
 }
 
 .skills-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
 }
 
 .skill-card {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:24px;
+  padding: 27px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: .25s;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.skill-icon {
+  font-size: 25px;
+  margin-bottom: 13px;
 }
 
 .skill-card h3 {
-  color:var(--pink);
-  margin-bottom:14px;
+  font-family: 'Playfair Display', serif;
+  color: var(--dark);
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
-.tags {
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
+.skill-card p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 15px;
 }
 
-.tag {
-  background:rgba(245,169,206,.09);
-  border:1px solid rgba(245,169,206,.2);
-  color:var(--light);
-  border-radius:20px;
-  padding:7px 12px;
-  font-size:12px;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
+
+.skill-tags span {
+  padding: 6px 10px;
+  background: var(--pink2);
+  color: #77455d;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* PROJECTS */
 
 .projects-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
 }
 
 .project-card {
-  min-height:230px;
-  display:flex;
-  flex-direction:column;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px;
+  transition: .25s;
+  box-shadow: 0 8px 30px rgba(50,27,43,.035);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .project-number {
-  color:var(--purple);
-  font-size:12px;
-  letter-spacing:3px;
-  margin-bottom:14px;
+  color: var(--rose);
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
+
+.project-status {
+  background: var(--pink2);
+  color: #874c68;
+  border-radius: 30px;
+  padding: 6px 11px;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .project-card h3 {
-  font-family:'Playfair Display',serif;
-  font-size:24px;
-  color:var(--light);
-  margin-bottom:12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--dark);
+  line-height: 1.3;
+  margin-bottom: 14px;
 }
 
 .project-card p {
-  color:var(--muted);
-  font-size:14px;
-  flex:1;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
 }
 
-.project-card .tags {
-  margin-top:20px;
+.project-card h4 {
+  font-size: 11px;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 20px 0 10px;
 }
 
-.timeline {
-  border-left:1px solid rgba(245,169,206,.5);
-  margin-left:8px;
-  padding-left:28px;
-  display:grid;
-  gap:24px;
+.project-card ul {
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
-.timeline-item {
-  position:relative;
+.project-card li {
+  margin-bottom: 7px;
 }
 
-.timeline-item::before {
-  content:"";
-  position:absolute;
-  left:-35px;
-  top:9px;
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background:var(--pink);
-  box-shadow:0 0 15px var(--pink);
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.timeline-item h3 {
-  color:var(--light);
-  font-size:18px;
+.project-tools span {
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: #f8e6ed;
+  color: #75465d;
+  font-size: 10px;
+  font-weight: 700;
 }
 
-.timeline-item small {
-  color:var(--purple);
+.project-footnote {
+  font-size: 11px !important;
+  color: #9b7184 !important;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 18px;
 }
 
-.timeline-item p {
-  color:var(--muted);
-  font-size:14px;
-  margin-top:6px;
+/* EXPERIENCE */
+
+.experience-section {
+  background: #fff4f7;
+}
+
+.experience-list {
+  display: grid;
+  gap: 20px;
+}
+
+.experience-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  transition: .25s;
+}
+
+.experience-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  color: var(--dark);
+}
+
+.experience-card .organization {
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 5px 0 12px;
+}
+
+.experience-card p,
+.experience-card li {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.experience-card ul {
+  padding-left: 18px;
+  margin-top: 12px;
+}
+
+.experience-card li {
+  margin-bottom: 6px;
+}
+
+/* EDUCATION */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
 }
 
 .education-card {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  padding: 27px;
+  border-radius: 18px;
+  background: var(--pink2);
+  border: 1px solid var(--line);
 }
 
 .education-card h3 {
-  color:var(--pink);
+  font-family: 'Playfair Display', serif;
+  color: var(--dark);
+  font-size: 21px;
+  margin-bottom: 8px;
 }
 
 .education-card p {
-  color:var(--muted);
-  font-size:14px;
-  margin-top:8px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.contact-box {
-  text-align:center;
-  padding:55px 25px;
-  border-radius:28px;
-  border:1px solid rgba(245,169,206,.3);
-  background:linear-gradient(135deg,rgba(245,169,206,.10),rgba(185,154,255,.09));
+.education-year {
+  display: inline-block;
+  margin-top: 12px;
+  color: #a14d70;
+  font-weight: 700;
+  font-size: 11px;
 }
 
-.contact-box h2 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(32px,5vw,48px);
-  margin:12px 0;
+/* LEARNING */
+
+.learning {
+  background: var(--dark);
+  color: white;
 }
 
-.contact-box p {
-  color:var(--muted);
-  margin-bottom:25px;
+.learning .section-title {
+  color: white;
+}
+
+.learning .section-intro {
+  color: #dfc8d3;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.learning-item {
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 16px;
+  padding: 22px;
+  background: rgba(255,255,255,.05);
+}
+
+.learning-item h3 {
+  color: var(--pink);
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.learning-item p {
+  color: #e4d1da;
+  font-size: 12px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: linear-gradient(135deg,#f9e2ea,#f6cfdd);
+  text-align: center;
+}
+
+.contact-section .section-intro {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-links {
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 28px;
 }
 
-.closing-message {
-  text-align:center;
-  padding:80px 20px 65px;
-  border-top:1px solid var(--line);
-  background:linear-gradient(
-    180deg,
-    rgba(245,169,206,.025),
-    rgba(185,154,255,.09)
-  );
+.contact-link {
+  padding: 13px 20px;
+  background: white;
+  color: var(--dark);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s;
 }
 
-.closing-message .little-heart {
-  color:var(--pink);
-  font-size:27px;
-  margin-bottom:12px;
+.contact-link:hover {
+  background: var(--dark);
+  color: white;
+  transform: translateY(-3px);
 }
 
-.closing-message h2 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(34px,5vw,52px);
-  color:var(--light);
-  margin-bottom:16px;
+.contact-email {
+  display: inline-block;
+  margin-top: 25px;
+  color: #84445f;
+  font-weight: 600;
 }
 
-.closing-message h2 span {
-  color:var(--pink);
+/* THANK YOU */
+
+.thank-you-section {
+  padding: 110px 20px;
+  text-align: center;
+  background: linear-gradient(135deg,#fce4ec,#f8d5e2,#f4c5d8);
+  color: #4b2638;
 }
 
-.closing-message p {
-  color:var(--muted);
-  max-width:680px;
-  margin:0 auto 15px;
-  font-size:15px;
+.thank-you-content {
+  max-width: 750px;
+  margin: auto;
 }
 
-.closing-message .thank-you {
-  color:var(--pink);
-  font-family:'Playfair Display',serif;
-  font-size:23px;
-  margin-top:25px;
+.thank-you-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+  font-size: 11px;
+  color: #a34e72;
 }
 
-.closing-message .signature {
-  color:var(--light);
-  margin-top:10px;
-  font-size:14px;
-  letter-spacing:2px;
+.thank-you-content h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(30px,5vw,48px);
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.thank-you-content p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 18px 0;
+  color: #654354;
+}
+
+.thank-you-content h3 {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(19px,3vw,25px);
+  font-style: italic;
+  margin-top: 38px;
+  color: #8e3e62;
+}
+
+.thank-you-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 35px;
+  font-family: 'Playfair Display',serif;
+}
+
+.thank-you-signature span {
+  font-size: 14px;
+  color: #80546a;
+}
+
+.thank-you-signature strong {
+  font-size: 25px;
+  color: #873b5c;
 }
 
 footer {
-  text-align:center;
-  padding:25px 15px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  font-size:13px;
+  background: var(--dark);
+  color: #e8ccd8;
+  text-align: center;
+  padding: 24px 15px;
+  font-size: 11px;
 }
 
 footer span {
-  color:var(--pink);
+  color: var(--pink);
 }
 
-@media(max-width:800px) {
-  .hero {
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:35px;
-    padding-top:65px;
-  }
+/* RESPONSIVE */
 
-  .hero p {
-    margin:auto;
-  }
-
-  .hero-buttons {
-    justify-content:center;
-  }
-
-  .photo-area {
-    grid-row:1;
-  }
-
-  .photo-frame {
-    width:235px;
-  }
-
+@media(max-width:850px) {
+  .hero-grid,
   .about-grid {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
-  .skills-grid {
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:600px) {
-  nav {
-    border-radius:20px;
-    padding:12px 17px;
+  .hero {
+    padding: 75px 0;
   }
 
-  .menu-btn {
-    display:block;
+  .hero-photo-wrap {
+    max-width: 290px;
   }
 
-  .nav-links {
-    display:none;
-    position:absolute;
-    top:58px;
-    left:0;
-    right:0;
-    background:#24162e;
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:20px;
-    flex-direction:column;
-    gap:16px;
+  .hero-photo {
+    height: 360px;
   }
 
-  .nav-links.show {
-    display:flex;
+  .hero-note {
+    left: -15px;
   }
 
   .skills-grid,
-  .projects-grid,
-  .education-card {
-    grid-template-columns:1fr;
+  .learning-grid {
+    grid-template-columns: repeat(2,1fr);
   }
 
+  .nav-links {
+    gap: 12px;
+  }
+}
+
+@media(max-width:650px) {
   section {
-    padding:65px 0;
+    padding: 75px 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    padding: 22px 5%;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
+  .hero-grid {
+    gap: 50px;
   }
 
   .hero h1 {
-    font-size:49px;
+    font-size: 54px;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .education-grid,
+  .learning-grid,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .experience-card {
+    padding: 23px;
+  }
+
+  .facts-grid {
+    gap: 22px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
 </style>
@@ -581,367 +839,222 @@ footer span {
 <body>
 
 <nav>
-  <a href="#home" class="logo">AD.</a>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Antara<span>.</span></a>
 
-  <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
-<main>
+<!-- HERO -->
 
-<section class="hero container" id="home">
-  <div>
-    <div class="eyebrow">Hello, welcome to my space</div>
+<header class="hero" id="home">
+  <div class="container hero-grid">
 
-    <h1>I'm <span>Antara</span><br>Deb.</h1>
+    <div>
+      <span class="hero-tag">WELCOME TO MY DIGITAL SPACE ♡</span>
 
-    <h2>Computer Science Engineering Student</h2>
+      <h1>Hello, I'm<br><span>Antara Deb.</span></h1>
 
-    <p>
-      Curious mind, creative soul and an aspiring technology professional.
-      I enjoy exploring programming, cybersecurity, machine learning and
-      building new things while learning every day.
-    </p>
+      <h2>Computer Science Engineering Student | Technology Enthusiast</h2>
 
-    <div class="hero-buttons">
-      <a href="#projects" class="btn">Explore my work ↗</a>
-      <a href="#contact" class="btn btn-outline">Let's connect</a>
+      <p>
+        I am an aspiring technology professional with an interest in
+        programming, machine learning, data analytics, cybersecurity,
+        and software development. I enjoy exploring how technology works,
+        learning new concepts, and building practical projects that help
+        me grow step by step.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Explore My Work</a>
+        <a href="#contact" class="btn btn-outline">Let's Connect</a>
+      </div>
     </div>
-  </div>
 
-  <div class="photo-area">
-    <div class="photo-frame">
+    <div class="hero-photo-wrap">
       <img
+        class="hero-photo"
         src="Screenshot_2026-10-30-01-38-32-42_92460851df6f172a4592fca41cc2d2e6.jpg"
-        alt="Antara Deb"
+        alt="Portrait of Antara Deb"
+        onerror="this.style.display='none';"
       >
+      <div class="hero-note">Learning. Building. Growing. ♡</div>
     </div>
+
   </div>
-</section>
+</header>
+
+<!-- ABOUT -->
 
 <section id="about">
   <div class="container">
-    <div class="section-heading">
-      <small>A little about me</small>
-      <h2>Beyond the screen.</h2>
-      <p>Learning, growing and creating my own path.</p>
-    </div>
+
+    <div class="section-label">GET TO KNOW ME</div>
+    <h2 class="section-title">A little about me.</h2>
 
     <div class="about-grid">
-      <div class="card">
-        <h3>Who am I?</h3>
+
+      <div class="about-copy">
         <p>
           I am Antara Deb, a Computer Science and Engineering student at
-          Barak Valley Engineering College. I am currently exploring
-          different areas of technology and strengthening my fundamentals.
-          My interests include software development, artificial intelligence,
-          machine learning and cybersecurity.
-          <br><br>
-          I believe in learning through practical experience, staying curious
-          and improving a little every day. I am open to opportunities where
-          I can learn, contribute and grow.
+          Barak Valley Engineering College, Assam, currently pursuing my
+          B.Tech degree (2023–2027).
+        </p>
+
+        <p>
+          My academic journey has introduced me to different areas of
+          computer science, including programming, database management,
+          data structures, machine learning, computer networks,
+          operating systems, distributed systems, and cybersecurity.
+        </p>
+
+        <p>
+          I am interested in understanding how technology can solve
+          practical problems. Through academic work, internships,
+          collaborative projects, and independent learning, I am
+          continuously working to strengthen my technical foundation.
+        </p>
+
+        <p>
+          I have explored machine learning and data mining through
+          Market Basket Analysis, worked with a cybersecurity-focused
+          SIEM project, and am developing a major project around
+          cardiovascular disease risk prediction and Explainable AI.
+        </p>
+
+        <p>
+          I believe that learning is a continuous process. I do not
+          consider myself an expert; instead, I value curiosity,
+          consistency, practical experience, and the willingness
+          to learn from mistakes.
         </p>
       </div>
 
-      <div class="card details">
-        <h3>Quick details</h3>
+      <div class="about-highlight">
+        <h3>What drives me?</h3>
 
-        <div class="detail-item">
-          <strong>EDUCATION</strong>
-          <span>B.Tech in Computer Science & Engineering</span>
-        </div>
+        <p>
+          <strong>Curiosity:</strong> Exploring new technologies and
+          understanding the ideas behind them.
+        </p>
 
-        <div class="detail-item">
-          <strong>COLLEGE</strong>
-          <span>Barak Valley Engineering College</span>
-        </div>
+        <p>
+          <strong>Problem-solving:</strong> Improving my logical thinking
+          and learning to approach problems step by step.
+        </p>
 
-        <div class="detail-item">
-          <strong>GRADUATION</strong>
-          <span>2027</span>
-        </div>
+        <p>
+          <strong>Practical learning:</strong> Applying classroom concepts
+          through projects, tools, and hands-on experience.
+        </p>
 
-        <div class="detail-item">
-          <strong>INTERESTS</strong>
-          <span>AI/ML · Cybersecurity · Development</span>
-        </div>
+        <p>
+          <strong>Growth:</strong> Becoming more confident, independent,
+          and capable with every new experience.
+        </p>
 
-        <div class="detail-item">
-          <strong>OPEN TO</strong>
-          <span>Internships · Learning · Opportunities</span>
+        <div class="personal-tags">
+          <span>Computer Science</span>
+          <span>Machine Learning</span>
+          <span>Cybersecurity</span>
+          <span>Data Analytics</span>
+          <span>Software Development</span>
+          <span>Continuous Learning</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="container">
-    <div class="section-heading">
-      <small>What I'm learning</small>
-      <h2>My skill universe.</h2>
-      <p>A growing collection of technologies and concepts.</p>
+<!-- QUICK FACTS -->
+
+<div class="facts">
+  <div class="container facts-grid">
+    <div class="fact">
+      <strong>2023–2027</strong>
+      <span>B.Tech CSE Journey</span>
     </div>
+    <div class="fact">
+      <strong>3</strong>
+      <span>Featured Projects</span>
+    </div>
+    <div class="fact">
+      <strong>Always</strong>
+      <span>Learning & Improving</span>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+
+<section class="skills-section" id="skills">
+  <div class="container">
+
+    <div class="section-label">MY TECHNICAL TOOLKIT</div>
+    <h2 class="section-title">Skills & Technologies.</h2>
+
+    <p class="section-intro">
+      These are the technologies, concepts, and tools I have studied,
+      explored, or used during coursework and projects. I am continuing
+      to strengthen my understanding through practice.
+    </p>
 
     <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Programming</h3>
-        <div class="tags">
-          <span class="tag">C</span>
-          <span class="tag">C++</span>
-          <span class="tag">Python</span>
-          <span class="tag">JavaScript Basics</span>
-        </div>
-      </div>
 
       <div class="skill-card">
-        <h3>Web Development</h3>
-        <div class="tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Responsive Design</span>
+        <div class="skill-icon">💻</div>
+        <h3>Programming Languages</h3>
+        <p>Building programming fundamentals and developing logical thinking.</p>
+        <div class="skill-tags">
+          <span>C</span>
+          <span>C++</span>
+          <span>Python</span>
+          <span>Programming Fundamentals</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <h3>Core CS</h3>
-        <div class="tags">
-          <span class="tag">DSA</span>
-          <span class="tag">DBMS</span>
-          <span class="tag">Operating Systems</span>
-          <span class="tag">Computer Networks</span>
-          <span class="tag">OOP</span>
+        <div class="skill-icon">🧠</div>
+        <h3>Computer Science Fundamentals</h3>
+        <p>Core concepts that support software and system development.</p>
+        <div class="skill-tags">
+          <span>Data Structures</span>
+          <span>Algorithms</span>
+          <span>OOP</span>
+          <span>DBMS</span>
+          <span>Operating Systems</span>
+          <span>Computer Networks</span>
+          <span>Distributed Systems</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <h3>AI & Machine Learning</h3>
-        <div class="tags">
-          <span class="tag">NumPy</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">SHAP</span>
-          <span class="tag">LIME</span>
+        <div class="skill-icon">🤖</div>
+        <h3>Machine Learning & AI</h3>
+        <p>Exploring data-driven methods and predictive modelling.</p>
+        <div class="skill-tags">
+          <span>Machine Learning</span>
+          <span>Supervised Learning</span>
+          <span>Classification</span>
+          <span>Regression</span>
+          <span>Model Evaluation</span>
+          <span>Explainable AI</span>
+          <span>SHAP</span>
+          <span>LIME</span>
         </div>
       </div>
 
       <div class="skill-card">
-        <h3>Cybersecurity</h3>
-        <div class="tags">
-          <span class="tag">SIEM</span>
-          <span class="tag">SOC Concepts</span>
-          <span class="tag">OWASP</span>
-          <span class="tag">Network Security</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Tools</h3>
-        <div class="tags">
-          <span class="tag">GitHub</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Ubuntu</span>
-          <span class="tag">VS Code</span>
-          <span class="tag">MySQL</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="section-heading">
-      <small>Things I've explored</small>
-      <h2>Selected projects.</h2>
-      <p>Some of my learning and practical experiences.</p>
-    </div>
-
-    <div class="projects-grid">
-
-      <article class="card project-card">
-        <div class="project-number">01 / CYBERSECURITY</div>
-        <h3>GotXA – Autonomous SecOps</h3>
-        <p>
-          Contributed to a project focused on end-to-end autonomous
-          security operations, SIEM and SOAR. Explored log ingestion
-          and security monitoring workflows.
-        </p>
-        <div class="tags">
-          <span class="tag">SIEM</span>
-          <span class="tag">SOAR</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Ubuntu</span>
-        </div>
-      </article>
-
-      <article class="card project-card">
-        <div class="project-number">02 / MACHINE LEARNING</div>
-        <h3>Cardiovascular Disease Risk Prediction</h3>
-        <p>
-          Academic project exploring machine learning approaches
-          for cardiovascular disease risk prediction and model
-          interpretability using Explainable AI techniques.
-        </p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">SHAP</span>
-          <span class="tag">LIME</span>
-        </div>
-      </article>
-
-      <article class="card project-card">
-        <div class="project-number">03 / DATA MINING</div>
-        <h3>Market Basket Analysis</h3>
-        <p>
-          Explored data mining concepts and association-rule
-          techniques to understand purchasing patterns and
-          relationships between items.
-        </p>
-        <div class="tags">
-          <span class="tag">Data Mining</span>
-          <span class="tag">Python</span>
-          <span class="tag">Association Rules</span>
-        </div>
-      </article>
-
-      <article class="card project-card">
-        <div class="project-number">04 / WEB DEVELOPMENT</div>
-        <h3>Personal Portfolio</h3>
-        <p>
-          Designed and published this personal portfolio website
-          to present my education, interests, skills and learning journey.
-        </p>
-        <div class="tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">GitHub Pages</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-heading">
-      <small>My journey so far</small>
-      <h2>Experience & learning.</h2>
-      <p>Learning from projects, internships and collaboration.</p>
-    </div>
-
-    <div class="card">
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <h3>SIEM Contributor – GotXA</h3>
-          <small>Cybersecurity Project Contribution</small>
-          <p>
-            Contributed to SIEM-related work and explored security
-            monitoring, log ingestion and SecOps workflows.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>NIT Silchar – Academic Internship</h3>
-          <small>Machine Learning & Data Mining</small>
-          <p>
-            Explored machine learning, data mining and Market Basket Analysis.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>NRL Golaghat – Industrial Internship</h3>
-          <small>Cybersecurity</small>
-          <p>
-            Gained exposure to cybersecurity concepts and industrial
-            security practices.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="container">
-    <div class="section-heading">
-      <small>Academic background</small>
-      <h2>Education.</h2>
-      <p>Every step of my learning journey matters.</p>
-    </div>
-
-    <div class="education-card">
-
-      <div class="card">
-        <div class="project-number">01 / SECONDARY EDUCATION</div>
-        <h3>Class X</h3>
-        <p><strong>School:</strong> Silchar Collegiate School</p>
-        <p><strong>Percentage:</strong> 83.83%</p>
-      </div>
-
-      <div class="card">
-        <div class="project-number">02 / HIGHER SECONDARY EDUCATION</div>
-        <h3>Class XII</h3>
-        <p><strong>School:</strong> Narsing HS School</p>
-        <p><strong>Percentage:</strong> 75%</p>
-      </div>
-
-      <div class="card" style="grid-column:1/-1;">
-        <div class="project-number">03 / UNDERGRADUATE EDUCATION</div>
-        <h3>B.Tech – Computer Science & Engineering</h3>
-        <p><strong>College:</strong> Barak Valley Engineering College</p>
-        <p><strong>Duration:</strong> 2023 – 2027</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="section-heading">
-      <small>Let's get in touch</small>
-      <h2>Good things start with a hello.</h2>
-      <p>I'd be happy to connect and hear from you.</p>
-    </div>
-
-    <div class="contact-box">
-      <div class="eyebrow">Have an opportunity?</div>
-      <h2>Let's connect.</h2>
-      <p>
-        I am always open to learning, collaboration and new opportunities.
-        Feel free to reach out.
-      </p>
-
-      <div class="contact-links">
-        <a class="btn" href="mailto:antara.deb984@gmail.com">Email me</a>
-
-        <a class="btn btn-outline"
-           href="https://www.linkedin.com/in/antara-cse-programming/"
-           target="_blank" rel="noopener">
-          LinkedIn ↗
-        </a>
-
-        <a class="btn btn-outline"
-           href="https://github.com/antaradeb0045"
-           target="_blank" rel="noopener">
-          GitHub ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section c
+        <di
